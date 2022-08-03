@@ -1,0 +1,62 @@
+{
+  "prettier.requireConfig": true,
+  "tslint.enable": true,
+  "tslint.autoFixOnSave": true,
+  "coc.preferences.snippetStatusText": "🌈",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "Markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "yaml",
+    "json",
+    "jsonc",
+    "python",
+    "php",
+    "yaml"
+  ],
+  "diagnostic.errorSign": "✘",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.file.showHiddenFiles": true,
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+  "emmet.showExpandedAbbreviation": "always",
+  "html.enable":true,
+  "html.validate.scripts": true,
+  "html.format.enable":true,
+  "tsserver.log": "verbose",
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact"
+   ],
+   "eslint.options" : {
+    "env": {
+        "browser": true,
+        "node": true
+    }
+    },
+  "eslint.packageManager": "yarn",
+  "eslint.nodePath": ".yarn/sdks",
+  "workspace.workspaceFolderCheckCwd": false,
+  "tsserver.tsdk": ".yarn/sdks/typescript/lib",
+  "java.configuration.runtimes": [
+    {
+    "name": "JavaSE-11",
+    "path": "C:/Program Files/Java/jdk-11.0.15",
+    "default": true
+    },
+    ]
+}
