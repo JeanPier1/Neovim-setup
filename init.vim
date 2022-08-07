@@ -391,3 +391,5 @@ let g:lsc_server_commands = {'javascript': 'typescript-language-server --stdio'}
 
 let g:lsc_server_commands = {'javascript': 'javascript-typescript-stdio'}
 
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
