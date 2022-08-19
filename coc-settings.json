@@ -37,7 +37,7 @@
   "html.format.enable":true,
   "tsserver.log": "verbose",
   "workspace.workspaceFolderCheckCwd": false,
-  "tsserver.tsdk": ".yarn/sdks/typescript/lib",
+  "eslint.packageManager": "yarn",
   "codeLens.enable": true,
   "java.referencesCodeLens.enabled": true,
   "java.jdt.ls.vmargs": "-javaagent:C:/Users/User/AppData/Local/lombok/lombok.jar",

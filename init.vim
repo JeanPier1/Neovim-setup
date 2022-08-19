@@ -393,3 +393,9 @@ let g:lsc_server_commands = {'javascript': 'javascript-typescript-stdio'}
 
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-q> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
