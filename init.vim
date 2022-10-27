@@ -1,7 +1,7 @@
 " Directorio de plugins
 call plug#begin('C:\Users\User\AppData\Local\nvim\plugged')
 " Aquí irán los plugins a instalar
-Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -18,6 +18,7 @@ Plug 'mhinz/vim-startify'
 
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 "Autocompletion JavaScript
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
@@ -353,17 +354,17 @@ EOF
 
 let b:ale_linters = {'javascript': ['eslint']}
 
-inoremap " ""<left>
-inoremap (; ();<left><left>
-inoremap [; [];<left><left>
-inoremap ( ()<left>
-inoremap [ []<left>
+""inoremap "<left>
+""inoremap (; ();<left><left>
+""inoremap [; [];<left><left>
+""inoremap ( ()<left>
+""inoremap [ []<left>
 inoremap {<cr> {<cr>}<esc>O
 inoremap (<cr> (<cr>)<esc>O
 inoremap [<cr> [<cr>]<esc>O
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ` ``<left>
+"inoremap "<left>
+""inoremap ' ''<left>
+""inoremap ` ``<left>
 
 
 set foldmethod=marker 
