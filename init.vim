@@ -244,7 +244,8 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-nnoremap <space>e :CocCommand explorer<CR>
+"nnoremap <space>e :CocCommand explorer<CR>
+nmap <space>e <Cmd>CocCommand explorer<CR>
 
 function! StartifyEntryFormat()
     return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
