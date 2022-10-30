@@ -1,0 +1,48 @@
+{
+  "prettier.requireConfig": true,
+  "tslint.enable": true,
+  "tslint.autoFixOnSave": true,
+  "coc.preferences.snippetStatusText": "🌈",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "yaml",
+    "json",
+    "jsonc",
+    "python",
+    "php",
+    "yaml",
+    "graphql",
+    "handlebars"
+  ],
+  "diagnostic.errorSign": "✘",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.file.showHiddenFiles": true,
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+  "emmet.showExpandedAbbreviation": "always",
+  "html.enable":true,
+  "html.validate.scripts": true,
+  "html.format.enable":true,
+  "tsserver.log": "verbose",
+  "workspace.workspaceFolderCheckCwd": false,
+  "eslint.packageManager": "yarn",
+  "codeLens.enable": true,
+  "java.referencesCodeLens.enabled": true,
+  "tsserver.trace.server": "verbose",
+  "java.jdt.ls.vmargs": "-javaagent:C:/Users/User/AppData/Local/lombok/lombok.jar",
+  "angular.enable-strict-mode-prompt": false
+}
+
