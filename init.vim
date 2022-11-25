@@ -98,6 +98,11 @@ Plug 'terryma/vim-multiple-cursors'
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'Shougo/denite.nvim'
 
+" Terminal Toggle
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
+" Nvim-web-devicons
+Plug 'nvim-tree/nvim-web-devicons'
 
 call plug#end()
 
@@ -247,9 +252,9 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "nnoremap <space>e :CocCommand explorer<CR>
 nmap <space>e <Cmd>CocCommand explorer<CR>
 
-function! StartifyEntryFormat()
-    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-endfunction
+"function! StartifyEntryFormat()
+"    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+"endfunction
 
 let g:startify_bookmarks = [{'v':'~\AppData\Local\nvim\init.vim'},{'c':'~\AppData\Local\nvim\coc-settings.json'}]
 
@@ -333,7 +338,7 @@ nnoremap <silent>    <A-p> <Cmd>BufferPin<CR>
 
 "let g:coc_enabled = 1
 
-let g:python3_host_prog="C:/Users/User/AppData/Local/Programs/Python/Python310/python"
+let g:python3_host_prog="C:/Users/User/AppData/Local/Programs/Python/Python311/python"
 
 let g:deoplete#enable_at_startup = 1
 let g:yats_host_keyword = 1
@@ -345,12 +350,6 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ 'ts'
                 \ ]
 
-lua <<EOF
-local lsp = require('lsp-zero')
-
-lsp.preset('recommended')
-lsp.setup()
-EOF
 
 
 let b:ale_linters = {'javascript': ['eslint']}
@@ -398,6 +397,62 @@ inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-q> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-o> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+autocmd TermEnter term://*toggleterm#*
+      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm direction=horizontal size=10"<CR>
+
+nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm direction=horizontal size=10"<CR>
+inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm direction=horizontal size=10"<CR>
+
+
+lua << EOF
+    local lsp = require('lsp-zero')
+    lsp.preset('recommended')
+    lsp.setup()
+EOF
+
+lua << EOF
+   require("toggleterm").setup{} 
+EOF
+
+lua << EOF
+require'nvim-web-devicons'.setup {
+ -- your personnal icons can go here (to override)
+ -- you can specify color or cterm_color instead of specifying both of them
+ -- DevIcon will be appended to `name`
+ override = {
+  zsh = {
+    icon = "",
+    color = "#428850",
+    cterm_color = "65",
+    name = "Zsh"
+  },
+ };
+ -- globally enable different highlight colors per icon (default to true)
+ -- if set to false all icons will have the default icon's color
+ color_icons = true;
+ -- globally enable default icons (default to false)
+ -- will get overriden by `get_icons` option
+ default = true;
+}
+
+require'nvim-web-devicons'.get_icons()
+function _G.webDevIcons(path)
+  local filename = vim.fn.fnamemodify(path, ':t')
+  local extension = vim.fn.fnamemodify(path, ':e')
+  require("nvim-web-devicons").get_icon_by_filetype(filetype, opts)
+  require("nvim-web-devicons").get_icon_colors_by_filetype(filetype, opts)
+  require("nvim-web-devicons").get_icon_color_by_filetype(filetype, opts)
+  require("nvim-web-devicons").get_icon_cterm_color_by_filetype(filetype, opts)
+  return require'nvim-web-devicons'.get_icon(filename, extension, { default = true })
+end
+
+EOF
+
+let g:deoplete#lsp#use_icons_for_candidates = 1
+let g:webdevicons_enable_startify = 1
+function! StartifyEntryFormat() abort
+  return 'v:lua.webDevIcons(absolute_path) . " " . entry_path'
+endfunction
